@@ -1,11 +1,8 @@
 const express = require('express');
-const User = require('../model/userModel');
+const {getAdmin} = require('../controllers/adminController');
 
 const router = express.Router()
 
-
-router.get('/',(req,res) => {
-        res.status(200).send('admin');
-})
+router.get('/',getAdmin)
 
 module.exports = router
