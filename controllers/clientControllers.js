@@ -1,12 +1,14 @@
-const data = require('./Data')
+const User = require('../model/userModel');
 
 const getData = (req,res) => {
-    if(data){
+    User.findOne({name: 'shri prakash shukla'})
+    .then((data)=>{
+        console.log(data)
         res.status(200).send(data)
-    }
-    else{
-        res.status(400).send('data not found');
-    }
+    })
+    .catch((e)=>{
+        console.log('Error in fetching: ',e)
+    })
 }
 
 module.exports = {getData}
