@@ -2,8 +2,8 @@ const express = require('express')
 const cors = require('cors')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose');
-const clientRouter = require('./routers/client')
-const adminRouter = require('./routers/admin')
+const clientRouter = require('./routers/clientRouter')
+const adminRouter = require('./routers/adminRouter')
 
 const app = express()
 app.use(cors())
