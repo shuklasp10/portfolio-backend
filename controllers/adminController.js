@@ -10,7 +10,7 @@ function getAdmin(req, res) {
 function getSample(req, res) {
     fs.writeFile(path.join(__dirname, 'sample.json'), JSON.stringify(data, null, 2), (err) => {
         if (err) {
-            console.log('file not converted');
+            console.log('file not converted', err);
         }
         else {
             res.download(path.join(__dirname, 'sample.json'), 'sample.json')
