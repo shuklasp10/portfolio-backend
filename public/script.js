@@ -3,7 +3,7 @@ const btnUpload = document.getElementById('btn-upload');
 function handleUpload(){
     const file = document.getElementById('ip-file').files[0];
     if(!file){
-        alert('Please upload JSON file.')
+        alert('Please select JSON file.')
         return 
     }
 

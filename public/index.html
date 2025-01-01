@@ -10,9 +10,66 @@
 </head>
 
 <body>
-    <input id="ip-file" type="file" accept=".json" placeholder="upload json">
-    <button id="btn-upload">Upload</button>
-    <a href="/admin/sample"><button id="btn-download">Downlaod File</button></a>
+    <div class="main">
+        <h1>Portfolio: Admin</h1>
+
+        <div class="form">
+
+            <!-- --------------------- json uploader --------------------- -->
+            <section class="json-upload">
+                <input id="ip-file" type="file" accept=".json" placeholder="upload json">
+                <button id="btn-upload" class="submit">Upload</button>
+                <a href="/admin/sample"><button id="btn-download" class="info">Download File</button></a>
+            </section>
+
+            <h4>OR</h4>
+
+            <!-- --------------------- headline --------------------- -->
+            <section>
+                <h3>Headline</h3>
+                <div class="first-headline">
+                    <label for="first-headline">First Headline</label>
+                    <input id="first-headline" type="text" placeholder="Enter first headline" />
+                </div>
+                <div class="sedond-headline">
+                    <label for="second-headline">Second Headline</label>
+                    <input id="second-headline" type="text" placeholder="Enter second headline" />
+                </div>
+            </section>
+
+            <!-- --------------------- resume --------------------- -->
+            <section>
+                <h3>Resume</h3>
+                <div class="view">
+                    <label for="viewurl">View Link</label>
+                    <input id="viewlink" type="text" placeholder="Enter link to view resume" />
+                </div>
+                <div class="file">
+                    <label for="viewurl">Download Link</label>
+                    <input id="file" type="text" placeholder="Enter link to download resume" />
+                </div>
+            </section>
+
+            <!-- --------------------- project --------------------- -->
+            <section>
+                <h3>Project</h3>
+                <div class="view">
+                    <label for="project-name">Project Name</label>
+                    <input id="project-name" type="text" placeholder="Enter project name" />
+                </div>
+                <div class="livelink">
+                    <label for="livelink">Live Link</label>
+                    <input id="livelink" type="text" placeholder="Enter link to view live project " />
+                </div>
+                <div class="srclink">
+                    <label for="srclink">Live Link</label>
+                    <input id="srclink" type="text" placeholder="Enter link to show source code" />
+                </div>
+            </section>
+
+            <button class="submit form-submit">Submit</button>
+        </div>
+    </div>
 </body>
 
 </html>
