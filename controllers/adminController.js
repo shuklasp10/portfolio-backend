@@ -1,16 +1,21 @@
 const User = require('../model/userModel');
 const path = require('path')
-const data = require('../controllers/Data')
-const fs = require('fs')
 
 function getAdmin(req, res) {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
 }
 
 function getSample(req, res) {
-    res.setHeader('Content-Disposition', 'attachment; filename="sample.json"');
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(data, null, 2))
+    User.findOne({name: 'shri prakash shukla'})
+    .then((data)=>{
+        res.setHeader('Content-Disposition', 'attachment; filename="sample.json"');
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).send(JSON.stringify(data, null, 2));
+    })
+    .catch((err)=>{
+        console.log(err);
+        res.status(400).send('error in fetching data');
+    })
 }
 
 function postData(req, res) {
