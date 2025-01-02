@@ -1,7 +1,6 @@
 const User = require('../model/userModel');
 const path = require('path')
 const data = require('../controllers/Data')
-const fs = require('fs')
 
 function getAdmin(req, res) {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
@@ -30,4 +29,17 @@ function postData(req, res) {
     }
 }
 
-module.exports = { getAdmin, getSample, postData };
+function patchData(req,res) {
+    const data = req.body;
+    User.findOneAndUpdate({name:'shri prakash shukla' }, data, {new: true, runValidators: true})
+    .then((newData)=>{
+        console.log(newData);
+        res.status(200).send('Updated Succesfully');
+
+    })
+    .catch((err)=>{
+        res.status(400).send('Error in updating data');
+    });
+}
+
+module.exports = { getAdmin, getSample, postData, patchData };

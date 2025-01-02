@@ -18,8 +18,8 @@
             <!-- --------------------- json uploader --------------------- -->
             <section class="json-upload">
                 <input id="ip-file" type="file" accept=".json" placeholder="upload json">
-                <button id="btn-upload" class="submit">Upload</button>
-                <a href="/admin/sample"><button id="btn-download" class="info">Download File</button></a>
+                <button class="submit" onclick=handleJsonUpload()>Upload</button>
+                <a href="/admin/sample"><button class="info">Download File</button></a>
             </section>
 
             <h4>OR</h4>
@@ -29,11 +29,11 @@
                 <h3>Headline</h3>
                 <div class="first-headline">
                     <label for="first-headline">First Headline</label>
-                    <input id="first-headline" type="text" placeholder="Enter first headline" />
+                    <input id="first-headline" type="text" placeholder="Enter first headline" value />
                 </div>
                 <div class="sedond-headline">
                     <label for="second-headline">Second Headline</label>
-                    <input id="second-headline" type="text" placeholder="Enter second headline" />
+                    <input id="second-headline" type="text" placeholder="Enter second headline" value/>
                 </div>
             </section>
 
@@ -42,11 +42,11 @@
                 <h3>Resume</h3>
                 <div class="view">
                     <label for="viewurl">View Link</label>
-                    <input id="viewlink" type="text" placeholder="Enter link to view resume" />
+                    <input id="viewlink" type="text" placeholder="Enter link to view resume" value />
                 </div>
                 <div class="file">
                     <label for="viewurl">Download Link</label>
-                    <input id="file" type="text" placeholder="Enter link to download resume" />
+                    <input id="file" type="text" placeholder="Enter link to download resume" value />
                 </div>
             </section>
 
@@ -55,19 +55,23 @@
                 <h3>Project</h3>
                 <div class="view">
                     <label for="project-name">Project Name</label>
-                    <input id="project-name" type="text" placeholder="Enter project name" />
+                    <input id="project-name" type="text" placeholder="Enter project name"  value/>
                 </div>
                 <div class="livelink">
                     <label for="livelink">Live Link</label>
-                    <input id="livelink" type="text" placeholder="Enter link to view live project " />
+                    <input id="livelink" type="text" placeholder="Enter link to view live project " value />
                 </div>
                 <div class="srclink">
-                    <label for="srclink">Live Link</label>
-                    <input id="srclink" type="text" placeholder="Enter link to show source code" />
+                    <label for="srclink">Source Code Link</label>
+                    <input id="srclink" type="text" placeholder="Enter link to show source code" value="" />
+                </div>
+                <div class="imagelink">
+                    <label for="imagelink">Image</label>
+                    <input id="imagelink" type="text" placeholder="Enter link to show project image" value="" />
                 </div>
             </section>
 
-            <button class="submit form-submit">Submit</button>
+            <button class="submit form-submit" onclick=handleFormSubmit()>Submit</button>
         </div>
     </div>
 </body>

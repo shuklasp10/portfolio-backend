@@ -1,5 +1,5 @@
 const express = require('express');
-const {getAdmin, getSample, postData} = require('../controllers/adminController');
+const {getAdmin, getSample, postData, patchData} = require('../controllers/adminController');
 const path = require('path')
 
 const router = express.Router()
@@ -7,7 +7,8 @@ const router = express.Router()
 router.use('/',express.static(path.join(__dirname,'..','public')));
 
 router.get('/',getAdmin)
-router.post('/',postData)
 router.get('/sample', getSample)
+router.post('/',postData)
+router.put('/',patchData)
 
 module.exports = router
